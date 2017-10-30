@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'social_django',
     'authsch',
+    'group',
+    'loan',
 ]
 
 MIDDLEWARE = [
