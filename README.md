@@ -11,8 +11,11 @@
 
 1. python3 -m venv venv
 2. source venv/bin/activate
-3. pip install -r requirements/development.txt
-4. python3 src/manage.py runserver
+3. mv environment.sh.example environment.sh
+4. Ki kell tölteni a környezeti változókat.
+5. source environment.sh
+6. pip install -r requirements/development.txt
+7. python3 src/manage.py runserver
 
 ## Formális Követelmények
 1. flake8-nak feleljen meg

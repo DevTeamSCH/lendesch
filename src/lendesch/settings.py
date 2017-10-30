@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '^n#y6o-7opbeje5q=7q8yh$b)eg2v9*fkxj*y!g5p-x0z1h57h'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'social_django',
+    'authsch',
 ]
 
 MIDDLEWARE = [
@@ -98,6 +100,18 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+AUTHENTICATION_BACKENDS = [
+    'authsch.authentication.AuthSCHOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+SOCIAL_AUTH_AUTHSCH_KEY = os.getenv('AUTHSCH_KEY')
+SOCIAL_AUTH_AUTHSCH_SECRET = os.getenv('AUTHSCH_SECRET')
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = "login/authsch/"
 
 
 # Internationalization
