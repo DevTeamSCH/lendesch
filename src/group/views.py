@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from common import mixins
+from . import models
+from . import serializers
+
+class LenderGroupViewSet(mixins.RelativeURLFieldMixin, viewsets.ModelViewSet):
+    queryset = models.LenderGroup.objects.all()
+    serializer_class = serializers.LenderGroupSerializer
