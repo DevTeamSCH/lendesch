@@ -1,4 +1,3 @@
-from django.conf import urls
 from rest_framework import routers
 
 from . import views
