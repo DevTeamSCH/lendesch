@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'authsch',
     'group',
     'loan',
+    'account',
 ]
 
 MIDDLEWARE = [
