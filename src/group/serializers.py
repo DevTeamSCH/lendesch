@@ -10,6 +10,7 @@ class LenderGroupSerializer(serializers.HyperlinkedModelSerializer):
         view_name='user-detail',
         queryset=User.objects.all()
     )
+
     class Meta:
         fields = ('url', 'name', 'administrators')
         model = models.LenderGroup

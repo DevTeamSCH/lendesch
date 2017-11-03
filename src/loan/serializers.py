@@ -5,6 +5,7 @@ from . import models
 
 class LoanSerializer(serializers.HyperlinkedModelSerializer):
     remarks = serializers.HyperlinkedRelatedField(many=True, view_name='remark-detail', read_only=True)
+
     class Meta:
         fields = serializers.ALL_FIELDS
         model = models.Loan
@@ -12,6 +13,7 @@ class LoanSerializer(serializers.HyperlinkedModelSerializer):
 
 class ResourceSerializer(serializers.HyperlinkedModelSerializer):
     remarks = serializers.HyperlinkedRelatedField(many=True, view_name='remark-detail', read_only=True)
+
     class Meta:
         fields = serializers.ALL_FIELDS
         model = models.Resource
