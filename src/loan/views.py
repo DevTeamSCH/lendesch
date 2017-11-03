@@ -18,3 +18,8 @@ class ResourceViewSet(mixins.RelativeURLFieldMixin, viewsets.ModelViewSet):
 class ResourceTypeViewSet(mixins.RelativeURLFieldMixin, viewsets.ModelViewSet):
     queryset = models.ResourceType.objects.all()
     serializer_class = serializers.ResourceTypeSerializer
+
+
+class RemarkViewSet(mixins.RelativeURLFieldMixin, viewsets.ModelViewSet):
+    queryset = models.Remark.objects.all()
+    serializer_class = serializers.RemarkSerializer

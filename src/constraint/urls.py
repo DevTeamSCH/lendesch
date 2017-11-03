@@ -4,6 +4,6 @@ from . import views
 
 
 router = routers.DefaultRouter()
-router.register('groups', views.LenderGroupViewSet)
+router.register('constraints', views.ConstraintViewSet)
 
 urlpatterns = router.urls

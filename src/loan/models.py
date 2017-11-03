@@ -2,7 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.fields import GenericRelation, GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
+
 from group.models import LenderGroup
+from constraint.models import Constraint
 
 
 class Remark(models.Model):
@@ -34,6 +36,7 @@ class Resource(models.Model):
     description = models.TextField()
     owner = models.ForeignKey(LenderGroup, related_name='resources', on_delete=models.CASCADE)
     type_of = models.ForeignKey(ResourceType, related_name='resources', on_delete=models.CASCADE)
+    constraints = models.ManyToManyField(Constraint, related_name='resources', blank=True)
     remarks = GenericRelation(Remark)
 
     def __str__(self):

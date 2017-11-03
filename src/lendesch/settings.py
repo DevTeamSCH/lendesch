@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'group',
     'loan',
     'account',
+    'constraint',
 ]
 
 MIDDLEWARE = [
